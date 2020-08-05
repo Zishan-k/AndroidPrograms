@@ -9,10 +9,34 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/hello_everybody"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/click_here"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button2"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="157dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button3"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="52dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
