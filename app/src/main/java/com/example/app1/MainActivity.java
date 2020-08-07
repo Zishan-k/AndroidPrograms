@@ -6,34 +6,39 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
-    Button b,b2,b3;
+    TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b= findViewById(R.id.button);
+        Button b=(Button) findViewById(R.id.button);
+        //Variable 'password' and 'email' is accessed from within inner class, needs to be declared final
+        final EditText password= (EditText) findViewById(R.id.EnterPassword);
+        final EditText email= (EditText) findViewById(R.id.EnterEmail);
+        tv= (TextView) findViewById(R.id.displaytv);
+
         b.setOnClickListener(new View.OnClickListener() {
+
             @SuppressLint("WrongConstant")
             @Override
             public void onClick(View v) {
+                String s= "Email:"+ password.getText() + "\n" + "Password:"+email.getText();
+                tv.setText(s);
                 Toast.makeText(getApplicationContext(),"From OnClick",100).show();
-            }
-        });
-        b2= findViewById(R.id.button2);
-        b2.setOnClickListener(new View.OnClickListener(){
-            @SuppressLint("WrongConstant")
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Button2 clicked",100).show();
             }
         });
     }
 
-    @SuppressLint("WrongConstant")
+
+ /*   @SuppressLint("WrongConstant")
     @Override
     protected void onPause() {
         super.onPause();
@@ -46,6 +51,5 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Toast.makeText(getApplicationContext(),"On Resume Called",100).show();
     }
-
-
+*/
 }
